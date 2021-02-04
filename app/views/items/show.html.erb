@@ -1,42 +1,4 @@
- <% @page_title =@item.name  %>
-  <!-- Page Content -->
-  <div class="container">
-
-    <div class="row">
-
-
-      <div class="col-lg-9">
-
-        <div class="card mt-4">
-          <div>
-          <%= image_tag(@item.picture, id: "show_image")%>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title"><%= @item.name %></h3>
-            <h4><%= item_price(@item) %></h4>
-            <h4> Description: </h4>
-            <p class="card-text"><%= @item.description %></p>
-            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-            4.0 stars
-          </div>
-        </div>
-        
-      </div>
-      <!-- /.col-lg-9 -->
-
-    </div>
-
-  </div>
-  <!-- /.container -->
-
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Dwayne's Wares 2020</p>
-    </div>
-    <!-- /.container -->
-  </footer>
-
-
-
-</body>
+<p id="notice"><%= notice %></p>
+ <%= image_tag(@item.picture_id, id: "show_image")%>
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

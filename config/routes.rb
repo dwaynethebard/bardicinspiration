@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
+  resources :store_front
+   #Resource full routes
+   resources :store_front do 
+    member do
+      get :show
+    end
+  end
+
+  resources :items
    #Resource full routes
    resources :items do 
     member do
       get :delete
     end
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'store#index'
+
+
+  root "store_front#index"
+  
 end

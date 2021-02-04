@@ -1,89 +1,71 @@
-class ItemsController < ApplicationController
-
- 
-  before_action :check_user , :only =>[:delete,:edit,:update]
+class ItemsController < PrivateController
+  before_action :set_item, only: %i[ show edit update destroy ]
   before_action :find_item, :only => [:show, :edit , :update ,:delete , :destroy]
-  after_action :flash_message
-
-  
+  # GET /items or /items.json
   def index
-  #  @pagy, @item = pagy(Items.sorted)
+    @items = Item.all
   end
 
+  # GET /items/1 or /items/1.json
   def show
-    render layout: "public"
-  end
- 
-  def new
-    @items = Items.new
-    @promo = Promo.all
-    @type = Type.all
   end
 
+  # GET /items/new
+  def new
+    @item = Item.new
+  end
+
+  # GET /items/1/edit
+  def edit
+  end
+
+  # POST /items or /items.json
   def create
     @item = Item.new(item_params)
-    @item.user_id = current_user.id
-  
-    if @item.save    
-      redirect_to(items_path)
-    else
-      render('new')
-    end
-  end
-  
 
-  def edit
-    @promo = Promo.all
-    @type = Type.all
-  end 
-
-  def update
-    @promo = Promo.all
-    @type = Type.all
-      if @item.update_attributes(item_params)
-        redirect_to(items_path)
+    respond_to do |format|
+      if @item.save
+        format.html { redirect_to @item, notice: "Item was successfully created." }
+        format.json { render :show, status: :created, location: @item }
       else
-        render('edit')
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
       end
-  end
-  
-
-  def delete
-  end
-
-  def destroy
-    if @item.destroy
-      redirect_to(items_path)
-    else
-      render("new")
     end
   end
-  
 
+  # PATCH/PUT /items/1 or /items/1.json
+  def update
+    respond_to do |format|
+      if @item.update(item_params)
+        format.html { redirect_to @item, notice: "Item was successfully updated." }
+        format.json { render :show, status: :ok, location: @item }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /items/1 or /items/1.json
+  def destroy
+    @item.destroy
+    respond_to do |format|
+      format.html { redirect_to items_url, notice: "Item was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
 
   private
-
-  def item_params
-    params.require(:item).permit(:name, :description, :quantity, :unit_value, :type_id, :user_id, :promo_id,:picture )
-  end
-
-  def check_user
-    @item = Item.find(params[:id])
-    unless @item.user_id == current_user.id || current_user.role == "super"
-      flash[:error] = 'This is not your item to touch'
-      redirect_to(items_path)
+    # Use callbacks to share common setup or constraints between actions.
+    def set_item
+      @item = Item.find(params[:id])
     end
-  end
-
-  def find_item
-    @item = Item.find(params[:id])
-  end
-
-  def flash_message
-    flash[:notice] = "Object was successfully updated"
-  end
-  def fail_flash
-    flash.now[:error] = @item.errors.full_messages
-  end
-
+    def find_item
+      @item = Item.find(params[:id])
+    end
+    # Only allow a list of trusted parameters through.
+    def item_params
+      params.require(:item).permit(:name, :description, :quantity, :unit_value )
+    end
 end

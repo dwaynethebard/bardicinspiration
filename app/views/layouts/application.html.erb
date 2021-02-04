@@ -15,14 +15,7 @@
 
 
 
-   
-    <% if !flash[:notice].blank? %>
-      <div class="alert alert-success alert-dismissible">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <%=flash[:notice]%>
-      </div>
-    <%end%>
-
+  
     <%= yield %>
 
 

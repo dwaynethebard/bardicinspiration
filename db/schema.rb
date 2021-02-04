@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_050126) do
+ActiveRecord::Schema.define(version: 2021_02_04_034251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,31 +42,11 @@ ActiveRecord::Schema.define(version: 2021_02_03_050126) do
     t.integer "quantity"
     t.decimal "unit_value"
     t.string "picture_id"
-    t.integer "type_id"
-    t.integer "promo_id"
+    t.text "category"
+    t.integer "upload_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["promo_id"], name: "index_items_on_promo_id"
-    t.index ["type_id"], name: "index_items_on_type_id"
-  end
-
-  create_table "promos", force: :cascade do |t|
-    t.string "name"
-    t.decimal "discount", precision: 4, scale: 2
-  end
-
-  create_table "types", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "username"
-    t.integer "role"
+    t.index ["upload_id"], name: "index_items_on_upload_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

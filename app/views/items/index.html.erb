@@ -1,10 +1,7 @@
 
 <% @page_title = "Inventory" %>
-    <% if !flash[:error].blank? %>
-      <div class="container alert alert-danger">
-        <%=flash[:error]%>
-      </div>
-    <%end%>
+<div> <%= link_to 'New Item', new_item_path %> </div>
+
 <div class="container">
 
   <div class="page-header">
@@ -26,11 +23,28 @@
           </tr>
         </thead>
 
-       
+        <tbody>
+          <% @items.each do |item| %>
+            <tr>
+
+              <td ><%= link_to(item.name, item_path(item), :class => 'action show') %></td>
+              <td ><%= item.quantity %></td>
+              <td ><%= item.quantity %></td>
+              <td ><%= item.quantity %></td>
+              <td ><%= item.quantity %></td>
+
+              <td class="actions" >
+                <%= link_to("Edit", edit_item_path(item), :class => 'action edit') %>
+                <%= link_to("Delete", delete_item_path(item), :class => 'action delete') %>
+              </td>
+
+            </tr>
+          <% end %>
+        </tbody>
 
       </table>
   
   </div>
-
+ 
 </div>
 

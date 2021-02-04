@@ -1,0 +1,21 @@
+// Place all the styles related to the Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* small action buttons */
+.actions {
+    width: 300px;
+    a.action {
+      float: left;
+      min-width: 3.5em;
+      padding: 1px 2px;
+      margin: 2px 5px;
+    }
+  }
+table {
+  width: 600px;
+}
+
+#Inventory{
+  min-height: 600px;
+}
+

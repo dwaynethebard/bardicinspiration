@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Waynewood Wonders: <%= @page_title || "Admin Area" %></title>
+        <%= csrf_meta_tags %>
+        <!-- bootstrap's To ensure proper rendering and touch zooming on mobile   -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <%= stylesheet_link_tag    'private', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body class="sb-nav-fixed">
+
+        <%= render partial: 'shared/privatenavbar' %>
+
+        <div id="layoutSidenav">
+            <%= render partial: 'shared/sidebar' %>
+            <% if !flash[:notice].blank? %>
+                <div class="alert alert-success alert-dismissible" id="alert">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <%=flash[:notice]%>
+                </div>
+                <%end%>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                      <%= yield %>  
+                    </div>
+                </main>
+
+                <%= render partial: 'shared/footer' %>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+

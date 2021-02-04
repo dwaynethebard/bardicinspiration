@@ -1,0 +1,315 @@
+// Place all the styles related to the Public controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+$icon-font-path: 'bootstrap/';
+@import "bootstrap";
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("istockphoto1.jpg");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#admin_menu{
+  z-index: 1;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+
+#typeImage{
+  left: 10%;
+}
+.thumbnail{border: 0;
+background-color: #F3EFEE;}
+.item-box
+{
+  width: 250px;
+  height: 350px;
+  padding: 0px;
+}
+body {
+  background-color: #F7F7F7;
+  }
+  .col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.abs-center-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.title-color{
+  color: #F7F7F7;
+}
+#logincard
+{
+  width: 600px;
+  height: 800px;
+  padding: 0px;
+}
+.navbar {
+   background-color: #F7F7F7;
+
+   -webkit-backdrop-filter: saturate(180%) blur(20px);
+   backdrop-filter: saturate(180%) blur(20px);
+ }
+
+#store-header
+{
+  background-color: #6F023F;
+  margin: 0%;
+  border-radius: 0px;
+}
+.row
+{
+  position: fixed center;
+}
+
+
+#field {
+  max-width: 900px;
+
+}
+#submit
+{
+  max-width: 150px;
+}
+
+
+#Store_image{
+  margin: 0px;
+  width: 300px;
+  height: 165px;
+}
+#show_image{
+  max-width:980px;
+  width: auto;
+  height: auto;
+}
+#Item_create_error{
+  position: fixed center;
+}
+#orignal_price {
+  text-decoration: line-through;
+  color: gray;
+  display:inline;
+
+}
+#new_price {
+  color: red;
+
+}
+
+#alert {
+  z-index: 1;
+  position: fixed;
+}
+
+.card {
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 15px 1px rgba(52,40,104,.08);
+}
+
+
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+  
+
+}
+
+.type-cards
+{
+  background-color: #6F023F;
+}
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+/*
+
+*/
+
+.type-spacing{
+  height: 100px;
+}
+.type-description{text-align: center;
+color: #F7F7F7;}
+.store-spacing
+{
+  height: 450px;
+ 
+}
+
+h2 {
+  color: #6F023F;
+  font-size: 70px;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+h5{
+  text-align: center;
+ 
+}
+
+
+
+.carousel-showmanymoveone .carousel-control {
+  width: 4%;
+  background-image: none;
+}
+
+.carousel-showmanymoveone .carousel-control.left {
+  margin-left: 0;
+}
+
+.carousel-showmanymoveone .carousel-control.right {
+  margin-right: 0;
+}
+
+.carousel-showmanymoveone .cloneditem-1,
+.carousel-showmanymoveone .cloneditem-2,
+.carousel-showmanymoveone .cloneditem-3 {
+  display: none;
+}
+
+.carousel .item .col-xs-12 {
+  padding: 0;
+}
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (max-width: 992px) {
+  .carousel .item .col-xs-12:nth-last-child(-n+2) {
+     display: none;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .carousel-showmanymoveone .carousel-inner > .active.left,
+  .carousel-showmanymoveone .carousel-inner > .prev {
+     left: -50%;
+  }
+  .carousel-showmanymoveone .carousel-inner > .active.right,
+  .carousel-showmanymoveone .carousel-inner > .next {
+     left: 50%;
+  }
+  .carousel-showmanymoveone .carousel-inner > .left,
+  .carousel-showmanymoveone .carousel-inner > .prev.right,
+  .carousel-showmanymoveone .carousel-inner > .active {
+     left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
+     display: block;
+  }
+}
+
+@media all and (min-width: 768px) and (transform-3d),
+all and (min-width: 768px) and (-webkit-transform-3d) {
+  .carousel-showmanymoveone .carousel-inner > .item.active.right,
+  .carousel-showmanymoveone .carousel-inner > .item.next {
+     -webkit-transform: translate3d(50%, 0, 0);
+     transform: translate3d(50%, 0, 0);
+     left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner > .item.active.left,
+  .carousel-showmanymoveone .carousel-inner > .item.prev {
+     -webkit-transform: translate3d(-50%, 0, 0);
+     transform: translate3d(-50%, 0, 0);
+     left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner > .item.left,
+  .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+  .carousel-showmanymoveone .carousel-inner > .item.active {
+     -webkit-transform: translate3d(0, 0, 0);
+     transform: translate3d(0, 0, 0);
+     left: 0;
+  }
+}
+
+@media all and (min-width: 992px) {
+  .carousel-showmanymoveone .carousel-inner > .active.left,
+  .carousel-showmanymoveone .carousel-inner > .prev {
+     left: -16.6%;
+  }
+  .carousel-showmanymoveone .carousel-inner > .active.right,
+  .carousel-showmanymoveone .carousel-inner > .next {
+     left: 16.6%;
+  }
+  .carousel-showmanymoveone .carousel-inner > .left,
+  .carousel-showmanymoveone .carousel-inner > .prev.right,
+  .carousel-showmanymoveone .carousel-inner > .active {
+     left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner .cloneditem-2,
+  .carousel-showmanymoveone .carousel-inner .cloneditem-3 {
+     display: block;
+  }
+}
+
+@media all and (min-width: 992px) and (transform-3d),
+all and (min-width: 992px) and (-webkit-transform-3d) {
+  .carousel-showmanymoveone .carousel-inner > .item.active.right,
+  .carousel-showmanymoveone .carousel-inner > .item.next {
+     -webkit-transform: translate3d(16.6%, 0, 0);
+     transform: translate3d(16.6%, 0, 0);
+     left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner > .item.active.left,
+  .carousel-showmanymoveone .carousel-inner > .item.prev {
+     -webkit-transform: translate3d(-16.6%, 0, 0);
+     transform: translate3d(-16.6%, 0, 0);
+     left: 0;
+  }
+  .carousel-showmanymoveone .carousel-inner > .item.left,
+  .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+  .carousel-showmanymoveone .carousel-inner > .item.active {
+     -webkit-transform: translate3d(0, 0, 0);
+     transform: translate3d(0, 0, 0);
+     left: 0;
+  }
+}

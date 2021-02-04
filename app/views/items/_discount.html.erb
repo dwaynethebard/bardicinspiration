@@ -1,0 +1,1 @@
+<div id="orignal_price" > <%= number_to_currency(item.unit_value) %> </div> <div id="new_price" >   <%= number_to_currency(item.unit_value*item.promo.try(:discount)) %> (  <%= item.promo.try(:discount)*100 %>%  ) </div>

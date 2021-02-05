@@ -1,0 +1,9 @@
+<div class= "container">
+  <%= form_for(@promo) do |f| %>
+    <div class="row">
+    <h2 class="form-signin-heading col-sm-4 col-md-offset-5">Edit promo</h2>
+    </div>
+    <%=render(:partial => "form", :locals => {:f=>f})%>
+
+  <% end %>
+</div>

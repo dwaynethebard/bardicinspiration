@@ -3,113 +3,36 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
-
-                    <a class="nav-link">
-                        <div class="sb-nav-link-icon">
-                            <i class="fas fa-tachometer-alt"></i>
-                        </div>
-                        
+                <div class=""><%= link_to 'Back Room', back_room_index_path %></div>
+              
+                   
                     </a>
 
                     <div class="sb-sidenav-menu-heading">Interface</div>
 
                     <a class="nav-link collapsed"  data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon">
-                            <i class="fas fa-columns"></i>
-                        </div>
-                            Inventory
-                            <div class="sb-sidenav-collapse-arrow">
-                            <i class="fas fa-angle-down"></i></div>
+           
+                            <%= link_to 'Inventory', items_path %>
+                          
+                    </a>
+
+   <a class="nav-link collapsed"  data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+           
+                            <%= link_to 'Types', types_path %>
+                          
+                    </a>
+
+                       <a class="nav-link collapsed"  data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+           
+                            <%= link_to 'Promo', promos_path %>
+                          
                     </a>
 
 
-                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav"> </br> </nav>
-                    </div>
-
-                    <a class="nav-link collapsed"  data-toggle="collapse" data-target="#collapseUsers" aria-expanded="false" aria-controls="collapseLayouts">
-                        <div class="sb-nav-link-icon">
-                            <i class="fas fa-columns"></i>
-                        </div>
-                            Users
-                            <div class="sb-sidenav-collapse-arrow">
-                            <i class="fas fa-angle-down"></i></div>
-                    </a>
-
-
-                    <div class="collapse" id="collapseUsers" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav"> </br> </nav>
-                    </div>
-
-
-                    <a class="nav-link collapsed"  data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                        <div class="sb-nav-link-icon">
-                            <i class="fas fa-book-open"></i>
-                        </div>
-                        Pages
-                        <div class="sb-sidenav-collapse-arrow">
-                            <i class="fas fa-angle-down"></i>
-                        </div>
-                    </a>
-
-                    <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-
-                        <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                            <a class="nav-link collapsed" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                Authentication
-                                <div class="sb-sidenav-collapse-arrow">
-                                    <i class="fas fa-angle-down"></i>
-                                </div>
-                            </a>
-
-                            <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link">Login</a>
-                                    <a class="nav-link">Register</a>
-                                    <a class="nav-link">Forgot Password</a>
-                                </nav>
-                            </div>
-
-                            <a class="nav-link collapsed"  data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                Error
-                                <div class="sb-sidenav-collapse-arrow">
-                                    <i class="fas fa-angle-down"></i>
-                                </div>
-                            </a>
-
-                            <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link">401 Page</a>
-                                    <a class="nav-link">422 Page</a>
-                                    <a class="nav-link">500 Page</a>
-                                </nav>
-                            </div>
-                        </nav>
-                    </div>
-
-
-                    <div class="sb-sidenav-menu-heading">Addons</div>
-
-                    <a class="nav-link">
-                        <div class="sb-nav-link-icon">
-                            <i class="fas fa-chart-area"></i>
-                        </div>
-                        Charts
-                    </a>
-
-                    <a class="nav-link">
-                        <div class="sb-nav-link-icon">
-                            <i class="fas fa-table"></i>
-                        </div>
-                        Tables
-                    </a>
-                </div>
+                 
 
             </div>
         
-            <div class="sb-sidenav-footer">
-                <div class="small">Logged in as: </div>
-                <strong></strong>
-            </div>
+          
     </nav>
 </div>

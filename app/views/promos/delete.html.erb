@@ -1,0 +1,22 @@
+<div class="items delete">
+  <h2>Delete item</h2>
+
+  <%= form_for(@promo, :method => 'delete') do |f| %>
+
+    <p>Are you sure you want to permanently delete this item?</p>
+    <%#= f.object.name the same thing @.item.name  %>
+    <p class="reference-name"><%= f.object.name %></p>
+    
+    <table summary="item detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @promo.name %></td>
+    </tr>
+  </table>
+
+    <div class="form-buttons">
+      <%= f.submit("Delete item") %>
+    </div>
+
+  <% end %>
+</div>

@@ -9,8 +9,49 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
-//= require rails-ujs
-//= require activestorage
-//= require turbolinks
-//= require_tree .
+
+//= require jquery3
+//= require jquery_ujs
+//= require bootstrap.min   
+
+
+window.onscroll = function () {
+    myFunction();
+  };
+  
+  sticky = 350;
+  document.addEventListener("DOMContentLoaded", () => {
+    sticky = navbar.offsetTop;
+    populateCarousel();
+  });
+  
+  function myFunction() {
+    var navbar = document.getElementById("navbar");
+  
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+  
+  function populateCarousel() {
+    $(".carousel-showmanymoveone .item").each(function () {
+      var itemToClone = $(this);
+  
+      for (var i = 1; i < 6; i++) {
+        itemToClone = itemToClone.next(); // wrap around if at end of item collection
+  
+        if (!itemToClone.length) {
+          itemToClone = $(this).siblings(":first");
+        } // grab item, clone, add marker class, add to collection
+  
+        itemToClone
+          .children(":first-child")
+          .clone()
+          .addClass("cloneditem-" + i)
+          .appendTo($(this));
+      }
+    });
+  }
+  

@@ -87,8 +87,10 @@ $icon-font-path: 'bootstrap/';
 .nav-link {
  display: block;
  padding: 0.5rem 1rem;
+ color: rgba(255, 255, 255, 0.5);
 }
 
+nav-link:hover {color: white;}
 .navbar {
  position: relative;
  display: flex;
@@ -334,7 +336,8 @@ $icon-font-path: 'bootstrap/';
  padding: 0.75rem;
  flex-shrink: 0;
 }
-
+.sb-sidenav-menu a
+{padding: 1.75rem 1rem 0.75rem;}
 .sb-sidenav-dark {
  background-color: #212529;
  color: rgba(255, 255, 255, 0.5);

@@ -1,0 +1,50 @@
+
+<% @page_title = "Promo" %>
+    <% if !flash[:error].blank? %>
+      <div class="container alert alert-danger">
+        <%=flash[:error]%>
+      </div>
+    <%end%>
+<div class="container">
+
+  <div class="page-header">
+    <h1 class="text-center" >promos</h1>
+  </div>
+<div class ="btn">
+<%= link_to("new", new_promo_path) %>
+</div>
+  <div class="row" id="Inventory" >
+
+      <table class="table table-hover table-bordered">
+
+        <thead>
+          <tr>
+            <th >Name</th>
+            <th >id</th>
+            <th >discount</th>
+            <th >Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @promos.each do |promo| %>
+            <tr>
+
+              <td ><%= link_to(promo.name, promo_path(promo), :class => 'action show') %></td>
+              <td ><%= promo.id %></td>
+              <td ><%= promo.discount %></td>
+              <td class="actions" >
+                <%= link_to("Edit", edit_promo_path(promo), :class => 'action edit') %>
+                <%= link_to("Delete", delete_promo_path(promo), :class => 'action delete') %>
+              </td>
+
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+  
+  </div>
+
+</div>
+

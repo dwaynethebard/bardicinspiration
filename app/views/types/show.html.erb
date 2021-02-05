@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Index:</strong>
+  <%= @type.index %>
+</p>
+
+<p>
+  <strong>New:</strong>
+  <%= @type.new %>
+</p>
+
+<p>
+  <strong>Delete:</strong>
+  <%= @type.delete %>
+</p>
+
+<p>
+  <strong>Show:</strong>
+  <%= @type.show %>
+</p>
+
+<%= link_to 'Edit', edit_type_path(@type) %> |
+<%= link_to 'Back', types_path %>

@@ -17,9 +17,10 @@
         <div class="col-md-4 col-xl-3">
             <div class="card bg-c-purple order-card">
                 <div class="card-block">
-                    <h6 class="m-b-20">Promos</h6>
-                    <h2 class="text-right"><i class="fa fa-rocket f-left"></i><span></span></h2>
+                    <h6 class="m-b-20">Type</h6>
                    
+                    <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span><%=@type%></span></h2>
+                    <p ><%= link_to "Index", types_path %><span class="f-right"><%= link_to "new", new_type_path %></span></p>
                 </div>
             </div>
         </div>
@@ -27,8 +28,9 @@
         <div class="col-md-4 col-xl-3">
             <div class="card bg-c-green order-card">
                 <div class="card-block">
-                    <h6 class="m-b-20">Type</h6>
-                    <h2 class="text-right"><i class="fa fa-rocket f-left"></i><span></span></h2>
+                    <h6 class="m-b-20">Promo</h6>
+                    <h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span><%=@promo%></span></h2>
+                    <p ><%= link_to "Index", promos_path %><span class="f-right"><%= link_to "new", new_promo_path %></span></p>
                  
                 </div>
             </div>

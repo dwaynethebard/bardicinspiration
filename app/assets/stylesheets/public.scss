@@ -89,17 +89,19 @@ body {
 {
   max-width: 150px;
 }
-
-
+footer{
+position: absolute;
+bottom: 0px;
+}
 #Store_image{
   margin: 0px;
   width: 300px;
   height: 165px;
 }
 #show_image{
-  max-width:980px;
-  width: auto;
-  height: auto;
+  
+  width: 100%;
+  height: 50%;
 }
 #Item_create_error{
   position: fixed center;

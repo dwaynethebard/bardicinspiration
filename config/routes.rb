@@ -1,7 +1,23 @@
 Rails.application.routes.draw do
+
   get 'store_front/about'
   resources :back_room
-  
+
+  resources :types
+  #Resource full routes
+  resources :types do 
+   member do
+     get :delete
+   end
+ end
+
+  resources :promos
+   #Resource full routes
+   resources :promos do 
+    member do
+      get :delete
+    end
+  end
   
   resources :store_front
    #Resource full routes

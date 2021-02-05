@@ -8,6 +8,7 @@ class ItemsController < PrivateController
 
   # GET /items/1 or /items/1.json
   def show
+    render layout: "public"
   end
 
   # GET /items/new
@@ -17,6 +18,7 @@ class ItemsController < PrivateController
 
   # GET /items/1/edit
   def edit
+    @item = Item.find(params[:id])
   end
 
   # POST /items or /items.json
@@ -46,7 +48,11 @@ class ItemsController < PrivateController
       end
     end
   end
+  
+  def delete
+  end
 
+  
   # DELETE /items/1 or /items/1.json
   def destroy
     @item.destroy
@@ -61,11 +67,12 @@ class ItemsController < PrivateController
     def set_item
       @item = Item.find(params[:id])
     end
+
     def find_item
       @item = Item.find(params[:id])
     end
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:name, :description, :quantity, :unit_value )
+      params.require(:item).permit(:name, :description, :quantity, :unit_value, :image )
     end
 end

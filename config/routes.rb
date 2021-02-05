@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'store_front/about'
+  resources :back_room
+  
+  
   resources :store_front
    #Resource full routes
    resources :store_front do 

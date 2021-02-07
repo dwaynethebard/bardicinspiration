@@ -7,7 +7,6 @@ $icon-font-path: 'bootstrap/';
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%;
 }
 
 .parallax {
@@ -63,7 +62,7 @@ body {
   padding: 0px;
 }
 .navbar {
-   background-color: #F7F7F7;
+   background-color: #C4C4C4;
 
    -webkit-backdrop-filter: saturate(180%) blur(20px);
    backdrop-filter: saturate(180%) blur(20px);

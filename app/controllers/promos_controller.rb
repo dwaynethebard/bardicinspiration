@@ -59,14 +59,12 @@ class PromosController < PrivateController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_promo
-      @promo = Promo.find(params[:id])
-    end
+  
     def find_promo
       @promo = Promo.find(params[:id])
     end
     # Only allow a list of trusted parameters through.
     def promo_params
-      params.fetch(:promo, {})
+      params.require(:promo).permit(:name, :discount )
     end
 end

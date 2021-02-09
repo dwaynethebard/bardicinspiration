@@ -1,0 +1,51 @@
+
+<% @page_title = "Users" %>
+    <% if !flash[:error].blank? %>
+      <div class="container alert alert-danger">
+        <%=flash[:error]%>
+      </div>
+    <%end%>
+<div class="container">
+
+  <div class="page-header">
+    <h1 class="text-center" >users</h1>
+  </div>
+
+  <div class="row" id="Users" >
+
+      <table class="table table-hover table-bordered">
+
+        <thead>
+          <tr>
+            <th >First Name</th>
+            <th >Last Name</th>
+            <th >Username</th>
+            <th >Email</th>
+            <th >Role</th>
+            <th >Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td ><%= user.first_name %></td>
+              <td ><%= user.last_name %></td>
+              <td ><%= link_to(user.username, user_path(user), :class => 'action show') %></td>
+              <td ><%= user.email %></td>
+              <td ><%= user.role %></td>
+              <td class="actions" >
+                <%= link_to("Edit", edit_user_path(user), :class => 'action edit') %>
+                <%= link_to("Delete", delete_user_path(user), :class => 'action delete') %>
+              </td>
+
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+  
+  </div>
+ 
+</div>
+

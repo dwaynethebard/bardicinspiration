@@ -37,12 +37,12 @@
         </div>
         
         
-        <div class="col-md-4 col-xl-3">
+         <div class="col-md-4 col-xl-3">
             <div class="card bg-c-pink order-card">
                 <div class="card-block">
                     <h6 class="m-b-20">Users</h6>
-                    <h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span></span></h2>
-                  
+                    <h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span><%=@user%></span></h2>
+                    <p ><%= link_to "Index", users_path %><span class="f-right"><%= link_to "New", new_user_path %></span></p>
                 </div>
             </div>
         </div>

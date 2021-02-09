@@ -1,5 +1,5 @@
 class ItemsController < PrivateController
-  before_action :set_item, only: %i[ show edit update destroy ]
+ 
   before_action :find_item, :only => [:show, :edit , :update ,:delete , :destroy]
   # GET /items or /items.json
   def index
@@ -14,11 +14,14 @@ class ItemsController < PrivateController
   # GET /items/new
   def new
     @item = Item.new
+    @promo = Promo.all
+    @type = Type.all
   end
 
   # GET /items/1/edit
   def edit
-    @item = Item.find(params[:id])
+    @promo = Promo.all
+    @type = Type.all
   end
 
   # POST /items or /items.json
@@ -65,15 +68,13 @@ class ItemsController < PrivateController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_item
-      @item = Item.find(params[:id])
-    end
+  
 
     def find_item
       @item = Item.find(params[:id])
     end
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:name, :description, :quantity, :unit_value, :image )
+      params.require(:item).permit(:name, :description, :quantity, :unit_value, :image, :type_id, :promo_id )
     end
 end

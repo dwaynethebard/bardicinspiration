@@ -3,5 +3,6 @@ class BackRoomController < PrivateController
     @item = Item.count
     @type = Type.count
     @promo = Promo.count
+    @user = User.count
   end
 end

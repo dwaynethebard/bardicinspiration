@@ -1,6 +1,6 @@
 class TypesController < PrivateController
   before_action :set_type, only: %i[ show edit update destroy ]
-
+  before_action :find_type, :only => [:show, :edit , :update ,:delete , :destroy]
   # GET /types or /types.json
   def index
     @types = Type.all
@@ -8,6 +8,7 @@ class TypesController < PrivateController
 
   # GET /types/1 or /types/1.json
   def show
+    @types = Type.all
   end
 
   # GET /types/new
@@ -26,7 +27,7 @@ class TypesController < PrivateController
     respond_to do |format|
       if @type.save
         format.html { redirect_to @type, notice: "Type was successfully created." }
-        format.json { render :show, status: :created, location: @type }
+        format.json { render :index, status: :created, location: @type }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @type.errors, status: :unprocessable_entity }
@@ -50,6 +51,7 @@ class TypesController < PrivateController
   end
   # DELETE /types/1 or /types/1.json
   def destroy
+    @type.image.purge
     @type.destroy
     respond_to do |format|
       format.html { redirect_to types_url, notice: "Type was successfully destroyed." }
@@ -58,13 +60,16 @@ class TypesController < PrivateController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_type
-      @type = Type.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_type
+    @type = Type.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def type_params
-      params.require(:type).permit(:index, :new, :delete, :show)
-    end
+  def find_type
+    @type = Type.find(params[:id])
+  end
+  # Only allow a list of trusted parameters through.
+  def type_params
+    params.require(:type).permit(:name, :description, :image )
+  end
 end

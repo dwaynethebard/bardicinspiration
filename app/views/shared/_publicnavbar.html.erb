@@ -12,10 +12,13 @@
     <li class="dropdown nav-item">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop<span class="caret"></span></a>
       <ul class="dropdown-menu">
-    <li><a>All</a></li>
+      <li><a>All</a></li>
+      <% @types.each do |type| %>
+
+      <li><a><%=link_to(type.name, store_front_path(type.id)) %></a></li>
+      <%end%>
+
     </ul>
     </li>
   </ul>
 </nav>
-
-

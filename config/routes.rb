@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  
+  devise_for :users
   get 'store_front/about'
   resources :back_room
 
@@ -18,7 +20,13 @@ Rails.application.routes.draw do
       get :delete
     end
   end
-  
+  resources :users
+  #Resource full routes
+  resources :users do 
+   member do
+     get :delete
+   end
+ end
   resources :store_front
    #Resource full routes
    resources :store_front do 

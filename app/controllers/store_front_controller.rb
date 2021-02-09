@@ -6,7 +6,7 @@ class StoreFrontController < PublicController
   end
 
   def show
-    @items =Item.where("type_id = 5")
+    @items =Item.where("type_id = ?",params[:id])
 
   end
 end

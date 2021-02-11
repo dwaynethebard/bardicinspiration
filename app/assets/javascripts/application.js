@@ -13,7 +13,7 @@
 //= require jquery3
 //= require jquery_ujs
 //= require bootstrap.min   
-
+//= require_tree
 
 window.onscroll = function () {
     myFunction();
@@ -22,7 +22,7 @@ window.onscroll = function () {
   sticky = 350;
   document.addEventListener("DOMContentLoaded", () => {
     sticky = navbar.offsetTop;
-    populateCarousel();
+   
   });
   
   function myFunction() {
@@ -33,25 +33,5 @@ window.onscroll = function () {
     } else {
       navbar.classList.remove("sticky");
     }
-  }
-  
-  function populateCarousel() {
-    $(".carousel-showmanymoveone .item").each(function () {
-      var itemToClone = $(this);
-  
-      for (var i = 1; i < 6; i++) {
-        itemToClone = itemToClone.next(); // wrap around if at end of item collection
-  
-        if (!itemToClone.length) {
-          itemToClone = $(this).siblings(":first");
-        } // grab item, clone, add marker class, add to collection
-  
-        itemToClone
-          .children(":first-child")
-          .clone()
-          .addClass("cloneditem-" + i)
-          .appendTo($(this));
-      }
-    });
   }
   

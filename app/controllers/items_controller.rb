@@ -1,5 +1,5 @@
 class ItemsController < PrivateController
- 
+  before_action :authenticate_user! , :except => [:show]
   before_action :find_item, :only => [:show, :edit , :update ,:delete , :destroy]
   # GET /items or /items.json
   def index

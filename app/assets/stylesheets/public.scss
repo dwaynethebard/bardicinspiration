@@ -312,6 +312,10 @@ h5{
 .slick-arrow.slick-hidden {
     display: none;
 }
+.nav >li
+{
+  display: inline-block !important;
+}
 .slick-prev
 {
 background-color: rgba(52,40,104,.08);
@@ -337,5 +341,5 @@ height: 80px;
 {
   max-width: 100%;
   height: auto;
-
+  max-height: 360px;
 }

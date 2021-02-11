@@ -1,7 +1,7 @@
 class StoreFrontController < PublicController
   def index
      # Grab newest three items
-     @newest = Item.order(created_at: :asc).limit(7)
+     @newest = Item.order(created_at: :asc).limit(12)
      @types = Type.all
   end
 

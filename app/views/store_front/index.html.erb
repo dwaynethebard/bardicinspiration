@@ -12,50 +12,94 @@
  <!--Carousel Wrapper-->
 
 
-   <div class="col-md-12"style="background-color: #FFFFFF;">
-      <div class="carousel carousel-showmanymoveone slide" id="carousel-tilenav" data-interval="false">
-         <div class="carousel-inner">
-           <% @newest.each_with_index do |item,index| %>
-           <%if index==1%>
-            <div class="item active">
 
-               <div class="col-xs-12 col-sm-3 col-md-2">
-                  <div class="thumbnail item-box" >
-                    <%= link_to(image_tag(item.image, id: "Store_image"), item_path(item), :class => 'action show')  %>
-                    <h3><%= item.name %></h3>
-                  </div>
-               </div>
-
-            </div>
-             <%else%>
-            <div class="item">
-               <div class="col-xs-12 col-sm-3 col-md-2">
-                  <div class="thumbnail item-box" >
-                    <%= link_to(image_tag(item.image, id: "Store_image"), item_path(item), :class => 'action show')  %>
-                    <h3><%= item.name %></h3>
-                   
-                  </div>
-               </div>
-            </div>
-             <%end%>
+			<div class="slider center">
+          <% @newest.each_with_index do |item,index| %>
+				<div>
+					<div><%= link_to(image_tag(item.image, class: "Store_image"), item_path(item), :class => 'action show')  %></div>
+				</div>
             <%end%>
-         </div>
-         <a class="left carousel-control" href="#carousel-tilenav" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-         <a class="right carousel-control" href="#carousel-tilenav" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-      </div>
-   </div>
+				
+			</div>
+		
 
-
-
-
-
-  
     <div class="container-fluid marketing">
 
     
-    
+      <!-- START THE Types -->
+
+      <% @types.each_with_index do |type,index| %>
+      <% if type.image.attached? %>
+        <%if index%2==0%>
+          <div class="row ">
+
+            <div class="col-md-6 type-cards" >
+              <h2 class="featurette-heading type-spacing type-description" ><%= link_to(type.name, store_front_path(type.id)) %></h2>
+              <p class="type-spacing type-description"> <%=type.description %> </p>
+            </div>
+            <div class="col-md-6">
+            <%= link_to(image_tag(type.image, :class => "img-fluid"), store_front_path(type.id), :class => 'action show')  %>
+            </div>
+          
+          </div>
+
+      
+        <%else%>
+          <div class="row ">
+ 
+            <div  class="col-md-6 ">
+              <%= link_to(image_tag(type.image, :size => "300x300"), store_front_path(type.id), :class => 'action show', :size => "140x140")  %>
+            </div>
+
+
+            <div class="col-md-6 type-cards">
+               <h2 class="featurette-heading type-spacing type-description" ><%= link_to(type.name, store_front_path(type.id)) %></h2>
+              <p class="type-spacing type-description"><%=type.description %></p>
+            </div>
+
+           
+          </div>
+
+         <% end %>
+        <%end%>
+      <%end%>
+
 
 
     </div><!-- /.container -->
 
  <hr class="featurette-divider">
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"></script>
+<script>
+      $('.center').slick({
+  centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 3,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+</script>
+<script>
+document.getElementsByClassName("slick-next")[0].innerHTML = "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-right' viewBox='0 0 16 16'>  <path fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>"
+
+document.getElementsByClassName("slick-prev")[0].innerHTML = "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-left' viewBox='0 0 16 16'>  <path fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>"
+ </script>

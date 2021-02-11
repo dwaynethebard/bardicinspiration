@@ -30,9 +30,7 @@ width: 100%;
   right: 50px;
 }
 
-#typeImage{
-  left: 10%;
-}
+
 .thumbnail{border: 0;
 background-color: #F3EFEE;}
 .item-box
@@ -88,13 +86,14 @@ body {
 }
 footer{
 position: absolute;
-bottom: 0px;
+
 }
-#Store_image{
+.Store_image{
   margin: 0px;
   width: 300px;
   height: 165px;
 }
+
 #show_image{
   
   width: 100%;
@@ -194,121 +193,149 @@ h5{
  
 }
 
+/* Slider */
+.slick-slider
+{
+    position: relative;
 
+    display: block;
+    box-sizing: border-box;
 
-.carousel-showmanymoveone .carousel-control {
-  width: 4%;
-  background-image: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.carousel-showmanymoveone .carousel-control.left {
-  margin-left: 0;
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
 }
 
-.carousel-showmanymoveone .carousel-control.right {
-  margin-right: 0;
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
 }
 
-.carousel-showmanymoveone .cloneditem-1,
-.carousel-showmanymoveone .cloneditem-2,
-.carousel-showmanymoveone .cloneditem-3 {
-  display: none;
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
 }
 
-.carousel .item .col-xs-12 {
-  padding: 0;
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
 }
-
-
-/* Medium Devices, Desktops */
-
-@media only screen and (max-width: 992px) {
-  .carousel .item .col-xs-12:nth-last-child(-n+2) {
-     display: none;
-  }
+[dir='rtl'] .slick-slide
+{
+    float: right;
 }
-
-@media all and (min-width: 768px) {
-  .carousel-showmanymoveone .carousel-inner > .active.left,
-  .carousel-showmanymoveone .carousel-inner > .prev {
-     left: -50%;
-  }
-  .carousel-showmanymoveone .carousel-inner > .active.right,
-  .carousel-showmanymoveone .carousel-inner > .next {
-     left: 50%;
-  }
-  .carousel-showmanymoveone .carousel-inner > .left,
-  .carousel-showmanymoveone .carousel-inner > .prev.right,
-  .carousel-showmanymoveone .carousel-inner > .active {
-     left: 0;
-  }
-  .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
-     display: block;
-  }
+.slick-slide img
+{
+    display: block;
 }
-
-@media all and (min-width: 768px) and (transform-3d),
-all and (min-width: 768px) and (-webkit-transform-3d) {
-  .carousel-showmanymoveone .carousel-inner > .item.active.right,
-  .carousel-showmanymoveone .carousel-inner > .item.next {
-     -webkit-transform: translate3d(50%, 0, 0);
-     transform: translate3d(50%, 0, 0);
-     left: 0;
-  }
-  .carousel-showmanymoveone .carousel-inner > .item.active.left,
-  .carousel-showmanymoveone .carousel-inner > .item.prev {
-     -webkit-transform: translate3d(-50%, 0, 0);
-     transform: translate3d(-50%, 0, 0);
-     left: 0;
-  }
-  .carousel-showmanymoveone .carousel-inner > .item.left,
-  .carousel-showmanymoveone .carousel-inner > .item.prev.right,
-  .carousel-showmanymoveone .carousel-inner > .item.active {
-     -webkit-transform: translate3d(0, 0, 0);
-     transform: translate3d(0, 0, 0);
-     left: 0;
-  }
+.slick-slide.slick-loading img
+{
+    display: none;
 }
-
-@media all and (min-width: 992px) {
-  .carousel-showmanymoveone .carousel-inner > .active.left,
-  .carousel-showmanymoveone .carousel-inner > .prev {
-     left: -16.6%;
-  }
-  .carousel-showmanymoveone .carousel-inner > .active.right,
-  .carousel-showmanymoveone .carousel-inner > .next {
-     left: 16.6%;
-  }
-  .carousel-showmanymoveone .carousel-inner > .left,
-  .carousel-showmanymoveone .carousel-inner > .prev.right,
-  .carousel-showmanymoveone .carousel-inner > .active {
-     left: 0;
-  }
-  .carousel-showmanymoveone .carousel-inner .cloneditem-2,
-  .carousel-showmanymoveone .carousel-inner .cloneditem-3 {
-     display: block;
-  }
+.slick-slide.dragging img
+{
+    pointer-events: none;
 }
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
 
-@media all and (min-width: 992px) and (transform-3d),
-all and (min-width: 992px) and (-webkit-transform-3d) {
-  .carousel-showmanymoveone .carousel-inner > .item.active.right,
-  .carousel-showmanymoveone .carousel-inner > .item.next {
-     -webkit-transform: translate3d(16.6%, 0, 0);
-     transform: translate3d(16.6%, 0, 0);
-     left: 0;
-  }
-  .carousel-showmanymoveone .carousel-inner > .item.active.left,
-  .carousel-showmanymoveone .carousel-inner > .item.prev {
-     -webkit-transform: translate3d(-16.6%, 0, 0);
-     transform: translate3d(-16.6%, 0, 0);
-     left: 0;
-  }
-  .carousel-showmanymoveone .carousel-inner > .item.left,
-  .carousel-showmanymoveone .carousel-inner > .item.prev.right,
-  .carousel-showmanymoveone .carousel-inner > .item.active {
-     -webkit-transform: translate3d(0, 0, 0);
-     transform: translate3d(0, 0, 0);
-     left: 0;
-  }
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+.slick-prev
+{
+background-color: rgba(52,40,104,.08);
+position: absolute;
+top: 28%;
+z-index: 2;
+border: none;
+width: 80px;
+height: 80px;
+}
+.slick-next
+{
+background-color: rgba(52,40,104,.08);
+position: absolute;
+top: 28%;
+z-index: 2;
+right: 0;
+border: none;
+width: 80px;
+height: 80px;
+}
+.img-fluid
+{
+  max-width: 100%;
+  height: auto;
+
 }

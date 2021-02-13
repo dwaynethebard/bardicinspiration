@@ -47,19 +47,22 @@
         <%else%>
           <div class="row ">
  
-            
-            <div id="large-screen"  class="col-md-6 ">
-              <%= link_to(image_tag(type.image, :class => "img-fluid"), store_front_path(type.id), :class => 'action show', :size => "140x140")  %>
-            </div>
-
-
-            <div class="col-md-6 type-cards">
+              <div class="col-md-6 type-cards" id="small-screen" style="display: none">
                <h2 class="featurette-heading type-spacing type-description" ><%= link_to(type.name, store_front_path(type.id)) %></h2>
               <p class="type-spacing type-description"><%=type.description %></p>
             </div>
-<div id="small-screen"  class="col-md-6 " style="display: none">
+
+            <div  class="col-md-6 ">
               <%= link_to(image_tag(type.image, :class => "img-fluid"), store_front_path(type.id), :class => 'action show', :size => "140x140")  %>
             </div>
+
+
+            <div class="col-md-6 type-cards" id="large-screen" >
+               <h2 class="featurette-heading type-spacing type-description" ><%= link_to(type.name, store_front_path(type.id)) %></h2>
+              <p class="type-spacing type-description"><%=type.description %></p>
+            </div>
+         
+       
            
           </div>
 

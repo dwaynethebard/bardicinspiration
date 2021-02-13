@@ -32,7 +32,8 @@ width: 100%;
 
 
 .thumbnail{border: 0;
-background-color: #F3EFEE;}
+background-color: #F3EFEE;
+height: 400px;}
 .item-box
 {
   width: 250px;
@@ -86,6 +87,16 @@ body {
 }
 footer{
 position: absolute;
+bottom: 0px;
+}
+.extra-margin{
+
+}
+.footer {
+ 
+  left: 0;
+  bottom: 0;
+  width: 100%;
 
 }
 .Store_image{

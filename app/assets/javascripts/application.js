@@ -12,26 +12,28 @@
 
 //= require jquery3
 //= require jquery_ujs
-//= require bootstrap.min   
+//= require bootstrap 
 //= require_tree
 
 window.onscroll = function () {
     myFunction();
   };
   
-  sticky = 350;
+  
   document.addEventListener("DOMContentLoaded", () => {
     sticky = navbar.offsetTop;
    
   });
   
   function myFunction() {
-    var navbar = document.getElementById("navbar");
-  
+    sticky = 180;
+    var navbar = document.getElementsByClassName("navbar")[0];
     if (window.pageYOffset >= sticky) {
       navbar.classList.add("sticky");
+      document.getElementById("store-header").classList.add("extra-margin");
     } else {
       navbar.classList.remove("sticky");
+      document.getElementById("store-header").classList.remove("extra-margin");
     }
   }
   

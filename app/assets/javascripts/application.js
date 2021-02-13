@@ -15,25 +15,5 @@
 //= require bootstrap 
 //= require_tree
 
-window.onscroll = function () {
-    myFunction();
-  };
-  
-  
-  document.addEventListener("DOMContentLoaded", () => {
-    sticky = navbar.offsetTop;
-   
-  });
-  
-  function myFunction() {
-    sticky = 180;
-    var navbar = document.getElementsByClassName("navbar")[0];
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky");
-      document.getElementById("store-header").classList.add("extra-margin");
-    } else {
-      navbar.classList.remove("sticky");
-      document.getElementById("store-header").classList.remove("extra-margin");
-    }
-  }
+
   

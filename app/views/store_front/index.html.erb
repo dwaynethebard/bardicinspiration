@@ -16,7 +16,13 @@
 			<div class="slider center">
           <% @newest.each_with_index do |item,index| %>
 				<div>
-					<div><%= link_to(image_tag(item.image, class: "Store_image"), item_path(item), :class => 'action show')  %></div>
+					<div>
+            <% if item.image.attached? %>
+            <%= link_to(image_tag(item.image, class: "Store_image", :size => "260x180"), item_path(item), :class => 'action show')  %>
+            <%else%>
+  <%=  link_to(image_tag("placeholderplant", id: "show_image",:size => "260x160"), item_path(item), :class => 'action show')  %>
+<% end %>
+</div>
 				</div>
             <%end%>
 				
@@ -95,7 +101,7 @@ function fixTypes(){
       $('.center').slick({
   centerMode: true,
   centerPadding: '60px',
-  slidesToShow: 3,
+  slidesToShow: 5,
   responsive: [
     {
       breakpoint: 768,
